@@ -11,17 +11,19 @@ var borderRadius = require('./fixtures/border-radius');
 var outline = require('./fixtures/outline');
 var flex = require('./fixtures/flex');
 
-var testProperty = function (name, fixture) {
-  test(name, function (t) {
-    Object.keys(fixture).forEach(function (key) {
-      var result = expand(name, key);
-      var message = util.format('value: %s', key);
 
-      t.deepEqual(result, fixture[key], message);
-    });
 
-    t.end();
-  });
+var testProperty = function(name, fixture) {
+	test(name, function(t) {
+		Object.keys(fixture).forEach(function(key) {
+			var result = expand(name, key);
+			var message = util.format('value: %s', key);
+
+			t.deepEqual(result, fixture[key], message);
+		});
+
+		t.end();
+	});
 };
 
 testProperty('margin', margin);
@@ -33,9 +35,9 @@ testProperty('border-radius', borderRadius);
 testProperty('outline', outline);
 testProperty('flex', flex);
 
-test('non-shorthand property', function (t) {
-  var result = expand('color', '#00f');
+test('non-shorthand property', function(t) {
+	var result = expand('color', '#00f');
 
-  t.notOk(result);
-  t.end();
+	t.notOk(result);
+	t.end();
 });

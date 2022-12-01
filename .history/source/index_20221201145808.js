@@ -6,7 +6,6 @@ var borderRadius = require('./border-radius');
 var background = require('./background');
 var directional = require('./directional');
 var outline = require('./outline');
-var flex = require('./flex');
 
 var prefix = function (prefix) {
   return function (value) {

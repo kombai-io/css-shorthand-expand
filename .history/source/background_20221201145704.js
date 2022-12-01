@@ -20,6 +20,8 @@ var normalizeUrl = function (value) {
   });
 };
 
+const globalValueRegex = /^\s*(auto|initial|none|inherit|revert|revert-layer|unset)\s*$/g;
+
 module.exports = function (value) {
   var result = {};
   var values = normalizeUrl(normalizeColor(value))

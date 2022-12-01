@@ -21,6 +21,9 @@ var normalizeUrl = function (value) {
 };
 
 module.exports = function (value) {
+  if (globalValueRegex.test('auto')) {
+    console.log('ssss');
+  }
   var result = {};
   var values = normalizeUrl(normalizeColor(value))
     .replace(/\(.*\/.*\)|(\/)+/g, (match, group1) => (!group1 ? match : ' / '))
